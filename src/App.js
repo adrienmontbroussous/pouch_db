@@ -2,11 +2,33 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Base from "./db.js";
+import Button from "@material-ui/core/Button";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.search = this.search.bind(this);
+    this.init = this.init.bind(this);
+    this.state = { base: null };
+  }
+
+  componentWillMount() {
+    let base = new Base("pointDeVente");
+    base.cleanDatabase();
+    this.setState({ base: base });
+  }
+
+  search() {
+    const { base } = this.state;
+    base.getPointDeVenteFromNom("CARREFOUR").then(r => console.log(r));
+  }
+
+  init() {
+    const { base } = this.state;
+    base.initDatabase();
+  }
+
   render() {
-    const base = new Base("coucou");
-    base.createNotes({});
     return (
       <div className="App">
         <header className="App-header">
@@ -14,6 +36,13 @@ class App extends React.Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
+          <Button key={"InitDataBase"} onClick={this.init} color="primary">
+            Mettre des donnees
+          </Button>
+          <Button key={"InitDataBase"} onClick={this.search} color="primary">
+            Rechercher
+          </Button>
+
           <a
             className="App-link"
             href="https://reactjs.org"

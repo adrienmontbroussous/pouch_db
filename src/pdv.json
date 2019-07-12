@@ -1,0 +1,30 @@
+{
+  "id": 122374,
+  "nom": "CARRFOUR",
+  "formeDeVente": {
+    "libelle": "Hypermarché",
+    "code": "10",
+    "value": "HYPERMARCHE"
+  },
+  "agglomeration": {
+    "id": 1784930,
+    "oldId": 10,
+    "libelle": "GUADELOUPE"
+  },
+  "adresse": {
+    "voie": "Centre Commercial Destreland",
+    "codePostal": "11111",
+    "ville": "MODIF COMMUNE",
+    "complement": "524"
+  },
+  "commune": {
+    "code": "97103",
+    "nom": "BAIE-MAHAULT"
+  },
+  "contact": null,
+  "commentaire": "SIRET : 399 515 113\n000 21",
+  "coordonneesGps": null,
+  "horairesOuverture": null,
+  "etat": null,
+  "dateFermeture": null
+}
